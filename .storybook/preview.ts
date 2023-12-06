@@ -1,8 +1,29 @@
 import type { Preview } from '@storybook/react';
+import '../styles/global.css'
 
-const BREAKPOINTS_INT = { xs: 375, sm: 600, md: 900, lg: 1200, xl: 1536 };
+interface IBreakpoints {
+  [key: string]: number;
+}
 
-const customViewports = {};
+const BREAKPOINTS_INT: IBreakpoints = {
+  xs: 375,
+  sm: 600,
+  md: 900,
+  lg: 1200,
+  xl: 1536,
+};
+
+interface ICustomViewports {
+  [key: string]: {
+    name: string;
+    styles: {
+      width: string;
+      height: string;
+    };
+  };
+}
+
+const customViewports: ICustomViewports = {};
 
 for (const [key, val] of Object.entries(BREAKPOINTS_INT)) {
   customViewports[key] = {
