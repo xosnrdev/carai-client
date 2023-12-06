@@ -1,4 +1,3 @@
-
 const BaseTemplate: React.FC = () => {
   return (
     <div className="bg-blue-500">
