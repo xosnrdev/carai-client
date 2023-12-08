@@ -1,4 +1,7 @@
+'use client';
+
 import { FC, ReactNode } from 'react';
+import { ToastProvider } from '../providers/ToastProvider';
 import Header from '../ui/header/header';
 
 interface IMainLayout {
@@ -8,7 +11,9 @@ interface IMainLayout {
 const MainLayout: FC<IMainLayout> = ({ children }) => (
   <>
     <Header />
-    <main>{children}</main>
+    <ToastProvider>
+      <main>{children}</main>
+    </ToastProvider>
   </>
 );
 
